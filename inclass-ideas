@@ -1,0 +1,11 @@
+// this section will show all the scores in the database
+
+    <p>max subj:</p>
+    <p>avg:</p>
+
+// table of scores with 
+    // edit button which will redirect to /scores/:id/edit
+        // after editing is done, redirect back to this /edit_score page
+    // delete button which will go to /scores/delete then redirect back
+
+// new score button which will link to /scores/new

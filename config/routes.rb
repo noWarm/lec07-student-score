@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :scores
-  resources :students
+  resources :students do
+    resources :scores
+  end  
 
   get 'students/:id/edit_score', to: 'students#edit_score'
 

@@ -1,9 +1,11 @@
 class ScoresController < ApplicationController
   before_action :set_score, only: %i[ show edit update destroy ]
+  before_action :get_student
 
   # GET /scores or /scores.json
   def index
-    @scores = Score.all
+    # @scores = Score.all
+    @scores = @student.scores
   end
 
   # GET /scores/1 or /scores/1.json
@@ -12,7 +14,8 @@ class ScoresController < ApplicationController
 
   # GET /scores/new
   def new
-    @score = Score.new
+    # @score = Score.new
+    @score = @student.scores.build
   end
 
   # GET /scores/1/edit
@@ -58,6 +61,11 @@ class ScoresController < ApplicationController
   end
 
   private
+
+    def get_student
+      @student = Student.find(params[:student_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_score
       @score = Score.find(params[:id])

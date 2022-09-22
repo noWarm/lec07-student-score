@@ -60,10 +60,14 @@ class StudentsController < ApplicationController
   
   # To add / edit / delete scores of this student
   def edit_score
-    
+
+
+
+    render 'edit_score_form'
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_student
       @student = Student.find(params[:id])

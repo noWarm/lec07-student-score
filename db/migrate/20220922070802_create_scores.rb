@@ -4,7 +4,7 @@ class CreateScores < ActiveRecord::Migration[7.0]
       t.string :subject
       t.integer :point
       t.string :grade
-      t.belongs_to :student
+      t.belongs_to :student, foreign_key: "student_id"
 
       t.timestamps
     end
